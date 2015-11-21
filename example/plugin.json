@@ -1,0 +1,13 @@
+{
+  "pluginType": "datasource",
+  "name": "EXAMPLE",
+
+  "type": "example",
+  "serviceName": "ExampleDatasource",
+
+  "module": "app/plugins/datasource/example/datasource",
+
+  "partials": {},
+
+  "metrics": true
+}
