@@ -27,28 +27,32 @@ define( [
 				// An array of all of the targets
 				// Each target will contain information added from query.editor.html
 				queryOptions.targets;
-				var firstTarget = queryOptions.targets[0];
+				var firstTarget = queryOptions.targets[ 0 ];
 
 				// This is what was set in query.editor.html
 				firstTarget.name;
 
 				// Must return an angular promise.
-				// The promise data must look like the var below...
-				var promiseData = [
-					{
-						target: "First target name",
-						datapoints: [
-							// Note: datapoints MUST be returned in the order you want them plotted
-							// ie. in time order.
-							[ 77, 1448117934475 ],
-							[ 89, 1888237564482 ]
-						]
-					},
-					{
-						target: "Second target name",
-						datapoints: []
-					}
-				];
+				// The promise data must look as belo
+				// See: https://docs.angularjs.org/api/ng/service/$q
+				return $q( function( resolve, reject ) {
+					resolve( [
+						{
+							target: "First target name",
+							datapoints: [
+								// Note: datapoints MUST be returned in the order you want them plotted
+								// ie. in time order.
+								[ 77, 1448117934475 ],
+								[ 89, 1888237564482 ]
+							]
+						},
+						{
+							target: "Second target name",
+							datapoints: []
+						}
+					] );
+					//Note: this example never rejects... (but can)
+				} );
 			};
 
 			return ExampleDatasource;
