@@ -9,5 +9,6 @@
 
   "partials": {},
 
-  "metrics": true
+  "metrics": true,
+  "annotations": true
 }

@@ -14,4 +14,8 @@ function (angular) {
      return {templateUrl: 'app/plugins/datasource/example/partials/query.options.html'};
    });
 
+    module.directive('annotationsQueryEditorExample', function() {
+        return {templateUrl: 'app/plugins/datasource/example/partials/annotations.editor.html'};
+    });
+
 });

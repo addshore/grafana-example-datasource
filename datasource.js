@@ -55,6 +55,18 @@ define( [
 				} );
 			};
 
+			MediawikiDatasource.prototype.annotationQuery = function( queryOptions ) {
+				if (queryOptions.annotation.target) {
+					var target = templateSrv.replace(queryOptions.annotation.target);
+
+					// Do stuff & return a promise of the data
+					return $q.when([]);
+
+				}
+				//If no target just return an empty promise..
+				return $q.when([]);
+			};
+
 			return ExampleDatasource;
 		} ] );
 	} );
